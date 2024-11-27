@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medición</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="{{ url_for('static', filename='probeta.png') }}">
+</head>
+<body>
+	<div class="container mx-auto">
+  		<h1 class="text-5xl text-center mt-20 font-bold text-blue-900 poppins-regular">MEDICIÓN</h1>
+	    <div class="px-72">
+			<h5 class="text-center text-xl text-blue-900 mt-5 poppins-regular mb-8">Aplicación web para identificar el tipo de fruta/verdura y medirala. Categorias Aceptadas: Manzana, Banana, Berenjena, Limon, Lulo, Mango, Papaya, Pera, Tomate, Calabacín. </h5>
+		</div>
+		<div class="text-center">
+			<a href="/" class="bg-blue-500 text-white rounded-full py-2 mx-10 mt-32 hover:bg-blue-600 poppins-regular px-20">Volver </a>
+		</div>
+		<div class="text-center">
+			<h5 class="text-center text-xl text-blue-900 mt-5 poppins-regular">Furta/Verdura: {{ fruit }}</h5>
+			<h5 class="text-center text-xl text-blue-900 mt-5 poppins-regular">MEDIDA: {{ medidas }}</h5>
+		</div>
+	    <div class="flex flex-wrap justify-center items-center">
+			<img src="{{ url_for('static', filename='object_measurements.jpg') }}" class="max-h-screen mx-10 mt-10 mb-10">
+		</div>
+		<div class="text-center">
+			<a href="/" class="bg-blue-500 text-white rounded-full py-2 mx-10 mt-20 hover:bg-blue-600 poppins-regular px-20">Volver </a>
+		</div>
+	</div>
+</body>
+</html>

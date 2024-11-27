@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medición</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="{{ url_for('static', filename='probeta.png') }}">
+</head>
+<body>
+	<div class="container mx-auto">
+  		<h1 class="text-5xl text-center mt-20 font-bold text-blue-900 poppins-regular">MEDICIÓN</h1>
+	    <div class="px-72">
+			<h5 class="text-center text-xl text-blue-900 mt-5 poppins-regular">Aplicación web para identificar el tipo de fruta/verdura y medirala. Categorias Aceptadas: Manzana, Banana, Berenjena, Limon, Lulo, Mango, Papaya, Pera, Tomate, Calabacín. </h5>
+		</div>
+	    <div class="flex flex-wrap justify-center items-center">
+			<img src="{{ url_for('static', filename='medida.png') }}" class="w-48 mx-10 mt-10">
+			<img src="{{ url_for('static', filename='frutas.png') }}" class="w-48 mx-10 mt-10">
+		</div>
+		<div class="text-center">
+			<a href="{{ url_for('static', filename='plantilla.pdf') }}" class="bg-blue-500 text-white rounded-full px-4 py-2 mx-10 mt-10 hover:bg-blue-600 poppins-regular">Descargar Plantilla</a>
+		</div>
+	    <h5 class="text-center text-base text-blue-900 mt-5 poppins-regular">Ingresa la imagen con el codigo aruco de 10x10cm para saber la medida de la fruta.</h5>
+		<form action="/medida" method="post" enctype="multipart/form-data">
+			<div class="flex flex-wrap justify-center items-center">
+				<input type="file" name="file" id="file" class="w-48 mx-10 mt-10" accept="image/png, image/jpeg, image/gif, image/jpg" required>
+			</div>
+			<div class="text-center">
+				<button class="bg-blue-500 text-white rounded-full px-4 py-2 mx-10 mt-10 hover:bg-blue-600 poppins-regular">Identificar y Medir </button>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
