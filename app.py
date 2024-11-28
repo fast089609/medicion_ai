@@ -3,7 +3,7 @@ import os
 from modelo import predict_image
 from medicion import measure_object_with_aruco
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static")
 
 # Configuración de subida
 UPLOAD_FOLDER = 'uploads'  # Carpeta donde se guardarán los archivos
@@ -14,6 +14,10 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 # Función para verificar si el archivo tiene una extensión permitida
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
+@app.route('/static/<path:filename>')
+def static_files(filename):
+    return send_from_directory(app.static_folder, filename)
 
 # Ruta principal
 @app.route("/")
